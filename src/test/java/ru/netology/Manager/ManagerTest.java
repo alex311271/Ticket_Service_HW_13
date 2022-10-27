@@ -11,6 +11,7 @@ public class ManagerTest {
     Repozitory repo = new Repozitory();
     Manager manager = new Manager(repo);
 
+
     Ticket ticket1 = new Ticket(11, 350, "MOW", "LED", 90);
     Ticket ticket2 = new Ticket(12, 200, "MOW", "LED", 120);
     Ticket ticket3 = new Ticket(13, 300, "MOW", "LED", 100);
@@ -43,7 +44,7 @@ public class ManagerTest {
 
     @Test
     public void findAllTicket() {
-        Ticket[] expected = {ticket4, ticket7, ticket2, ticket5, ticket6, ticket3, ticket8, ticket1, ticket9,ticket12, ticket10, ticket11};
+        Ticket[] expected = {ticket1, ticket9, ticket3, ticket8, ticket2, ticket5, ticket4, ticket6, ticket7,ticket11, ticket12, ticket10};
         Ticket[] actual = manager.findAllTicket();
 
         Assertions.assertArrayEquals(expected, actual);
@@ -53,7 +54,7 @@ public class ManagerTest {
     @Test
     public void findTowardsTicket() {
 
-        Ticket[] expected = {ticket2, ticket3, ticket1};
+        Ticket[] expected = {ticket1, ticket3, ticket2};
         Ticket[] actual = manager.findTowardsTicket("MOW", "led");
     }
 
