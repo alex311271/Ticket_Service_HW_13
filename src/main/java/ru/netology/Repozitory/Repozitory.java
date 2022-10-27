@@ -3,6 +3,7 @@ package ru.netology.Repozitory;
 import ru.netology.Domain.Ticket;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class Repozitory {
 
@@ -31,8 +32,8 @@ public class Repozitory {
 
 
 
-    public Ticket[] findAll() {
-        Arrays.sort(tickets);
+    public Ticket[] findAll(Comparator<Ticket>comparator) {
+        Arrays.sort(tickets, comparator);
         return tickets;
     }
 }
